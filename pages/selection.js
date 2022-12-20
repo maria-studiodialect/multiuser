@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
-import Header from '../components/header';
-import Title from '../components/title';
+import Header from '../components/Header';
+import Title from '../components/Title';
 import socket from '../utils/sockets'
 
 export default function Selection() {

@@ -1,9 +1,9 @@
-import Header from '../components/header';
+import Header from '../components/Header';
 import socket from '../utils/sockets'
 import Link from 'next/link';
 import { SliderPicker } from 'react-color';
 import React, { Fragment, useState, useEffect, setState } from "react";
-import Title from '../components/title';
+import Title from '../components/Title';
 
 export default function Colour() {
     socket.on('connect', () => {
