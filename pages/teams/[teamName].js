@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
-import socket from '../utils/sockets'
+import socket from '../../utils/sockets'
 
 const TeamPage = () => {
     const router = useRouter()

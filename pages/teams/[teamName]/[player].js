@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import socket from '../utils/sockets'
+import socket from '../../../utils/sockets'
 
 const PlayerPage = () => {
     const router = useRouter()
