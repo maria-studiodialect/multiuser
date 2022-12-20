@@ -18,18 +18,26 @@ const TeamPage = () => {
         }
     }
 
-    socket.on('join', (value) => {
-        // Log the color value received from the server
-        console.log(value);
-    });
+    useEffect(() => {
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            socket.emit('join', teamName);
+        });
+    
+        socket.on('updateNumPlayers', (newPlayers) => {
+            setPlayers(newPlayers);
+        });
+    
+        return () => {
+            socket.disconnect();
+        };
+    }, []);
 
     return (
         <div>
             <h1>Team: {teamName}</h1>
-            <QRCodeSVG value={`https://multiuser-test.vercel.app/${teamName}/${players.length + 1 + 1}`} onScan={handleScan} />
-            {players.map((player) => (
-                <div key={player}>Player {player}: Joined</div>
-            ))}
+            <QRCodeSVG value={`https://multiuser-test.vercel.app/${teamName}`} onScan={handleScan} />
+            <p>Number of players: {players}</p>
         </div>
     )
     }
