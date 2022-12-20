@@ -26,7 +26,7 @@ const TeamPage = () => {
     return (
         <div>
             <h1>Team: {teamName}</h1>
-            <QRCodeSVG value={`${teamName}/${players.length + 1 + 1}`} onScan={handleScan} />
+            <QRCodeSVG value={`https://multiuser-test.vercel.app/${teamName}/${players.length + 1 + 1}`} onScan={handleScan} />
             {players.map((player) => (
                 <div key={player}>Player {player}: Joined</div>
             ))}
