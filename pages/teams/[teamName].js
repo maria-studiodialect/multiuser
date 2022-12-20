@@ -36,7 +36,7 @@ const TeamPage = () => {
     return (
         <div>
             <h1>Team: {teamName}</h1>
-            <QRCodeSVG value={`https://multiuser-test.vercel.app/${teamName}`} onScan={handleScan} />
+            <QRCodeSVG value={`https://multiuser-test.vercel.app/teams/${teamName}`} onScan={handleScan} />
             <p>Number of players: {players}</p>
         </div>
     )
