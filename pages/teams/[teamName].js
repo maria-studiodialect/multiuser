@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
+import socket from '../utils/sockets'
 
 const TeamPage = () => {
     const router = useRouter()
@@ -16,6 +17,11 @@ const TeamPage = () => {
         // Display an error message or redirect to the team page
         }
     }
+
+    socket.on('join', (value) => {
+        // Log the color value received from the server
+        console.log(value);
+    });
 
     return (
         <div>
