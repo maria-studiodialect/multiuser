@@ -24,8 +24,9 @@ const TeamPage = () => {
             socket.emit('join', teamName);
         });
     
-        socket.on('updateNumPlayers', (newPlayers) => {
-            setPlayers(newPlayers);
+        socket.on('join', (value) => {
+            // Log the color value received from the server
+            console.log(value)
         });
     
         return () => {
