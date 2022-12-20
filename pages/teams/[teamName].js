@@ -12,7 +12,7 @@ const TeamPage = () => {
 
     const handleScan = (player) => {
         if (players.length < numPlayers) {
-        setPlayers([...players, player])
+            setPlayers([...players, player])
         } else {
         // Display an error message or redirect to the team page
         }
@@ -24,9 +24,8 @@ const TeamPage = () => {
             socket.emit('join', teamName);
         });
     
-        socket.on('join', (value) => {
-            // Log the color value received from the server
-            console.log(value)
+        socket.on('playerCountChanged', (playersByTeam) => {
+            console.log(playersByTeam);
         });
     
         return () => {
